@@ -88,9 +88,33 @@ noReps([(X,_)|T1]):-
 	\+member((X,_),T1),
 	noReps(T1).
 noReps([]).
+
+jp(S1,S2,PR):-
+	jp_Acc(S1,S2,PR,[]).
+
+jp_Acc(S1,S2,PR,List):-
+	route(Line1,L1),
+	\+member(Line1,List),
+	member(S1,L1),
+	member(S2,L1),
+	make_route(S1,S2,L1,Route),
+	PR=[(Line1,Route)].
+
+jp_Acc(S1,S2,PR,List):-
+	route(Line1,L1),
+	\+member(Line1,List),
+	member(S1,L1),
+	%\+member(S2,L1),
+	member(X,L1),
+	X\=S1,
+	append([Line1],List,List1),
+	jp_Acc(X,S2,PR1,List1),
+	make_route(S1,X,L1,Route1),
+	append([(Line1,Route1)],PR1,PR).
+
 	
 		
-		
+
 	
 	
 
