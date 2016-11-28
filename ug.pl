@@ -4,7 +4,7 @@ rev(L, R) :-
 tr_rev([], R, R).
 tr_rev([H|T], Acc, R) :-
 	tr_rev(T, [H|Acc], R).
-//
+
 
 /* 
 
@@ -20,6 +20,7 @@ Allowed:
 findall,setof,member,length,append
 
 */
+
 lines(S,L):-
 	setof(L1,passes(L1,S),L2)->
 	L=L2;	
