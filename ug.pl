@@ -1,8 +1,3 @@
-route(green,[a,b,c,d,e,f]).
-route(blue,[g,b,c,h,i,j]).
-route(silver, [f,i,k,m]).
-route(red, [w,v,e,i,m,n]).
-route(yellow, [p,q,r]).
 %  rev(+L1, -L2) means L2 is the list L1 reversed.
 rev(L, R) :-
 	tr_rev(L, [], R).
