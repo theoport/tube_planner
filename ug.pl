@@ -13,7 +13,7 @@ rev(L, R) :-
 tr_rev([], R, R).
 tr_rev([H|T], Acc, R) :-
 	tr_rev(T, [H|Acc], R).
-
+//
 
 /* 
 
