@@ -1,3 +1,8 @@
+route(green,[a,b,c,d,e,f]).
+route(blue,[g,b,c,h,i,j]).
+route(silver, [f,i,k,m]).
+route(red, [w,v,e,i,m,n]).
+route(yellow, [p,q,r]).
 %  rev(+L1, -L2) means L2 is the list L1 reversed.
 rev(L, R) :-
 	tr_rev(L, [], R).
@@ -97,7 +102,7 @@ jp_Acc(S1,S2,PR,List):-
 	\+member(Line1,List),
 	member(S1,L1),
 	member(S2,L1),
-	make_route(S1,S2,L1,Route),
+	make_forwards_route(S1,S2,L1,Route),
 	PR=[(Line1,Route)].
 
 jp_Acc(S1,S2,PR,List):-
@@ -109,8 +114,16 @@ jp_Acc(S1,S2,PR,List):-
 	X\=S1,
 	append([Line1],List,List1),
 	jp_Acc(X,S2,PR1,List1),
-	make_route(S1,X,L1,Route1),
+	make_forwards_route(S1,X,L1,Route1),
 	append([(Line1,Route1)],PR1,PR).
+make_forwards_route(S1,S2,[S1|T1],Route):-
+	member(S2,T1),
+	append(X,[S2|_],T1),
+	append([S1|X],[S2],Route).
+make_forwards_route(S1,S2,[H1|T1],Route):-
+	S1\=H1,
+	S2\=H1,
+	make_route(S1,S2,T1,Route).
 
 	
 		
