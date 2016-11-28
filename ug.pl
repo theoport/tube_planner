@@ -1,12 +1,3 @@
-% Possible configuration for route/2
-% Please REMOVE ALL definitions of the predicate route/2 in your submission
-route(green, [a,b,c,d,e,f]).
-route(blue, [g,b,c,h,i,j]).
-route(silver, [f,i,k,m]).
-route(red, [w,v,e,i,m,n]).
-route(yellow, [p, q, r]).
-route(brown, [a,b,c,d,e]).
-
 %  rev(+L1, -L2) means L2 is the list L1 reversed.
 rev(L, R) :-
 	tr_rev(L, [], R).
