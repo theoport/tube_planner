@@ -1,0 +1,10 @@
+route(green,[a,b,c,d,e,f]).
+route(blue,[g,b,c,h,i,j]).
+route(silver, [f,i,k,m]).
+route(red, [w,v,e,i,m,n]).
+route(yellow, [p,q,r]).
+
+%route(green,[a,b]).
+%route(red,[b,c,d,f]).
+%route(yellow,[c,i,f]).
+
